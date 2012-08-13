@@ -74,37 +74,27 @@ public class HeaderLote {
 				this.numero = numero;
 			}
 		}
-		
-		
-		
 		public Empresa.Inscricao getInscricao() {
 			return inscricao;
 		}
-
 		public void setInscricao(Empresa.Inscricao inscricao) {
 			this.inscricao = inscricao;
 		}
-
 		public String getConvenio() {
 			return Util.formataCampo(convenio, 20);
 		}
-
 		public void setConvenio(String convenio) {
 			this.convenio = convenio;
 		}
-
 		public CC getCc() {
 			return cc;
 		}
-
 		public void setCc(CC cc) {
 			this.cc = cc;
 		}
-
 		public String getNome() {
 			return nome;
 		}
-
 		public void setNome(String nome) {
 			this.nome = nome;
 		}
@@ -194,5 +184,4 @@ public class HeaderLote {
 	public void setCNAB(String cNAB) {
 		CNAB = cNAB;
 	}
-	
 }

@@ -8,7 +8,6 @@ public class CC{
 	private CC.Agencia agencia;
 	private CC.Conta conta;
 	
-	
 	CC() {}
 	
 	public class Agencia{
@@ -26,6 +25,11 @@ public class CC{
 		}
 		public void setDv(String dv) {
 			this.dv = dv;
+		}
+		
+		@Override
+		public String toString() {
+			return getCodigo().concat(getDv());
 		}
 	}
 	
@@ -48,6 +52,11 @@ public class CC{
 		public void setDv(String dv) {
 			this.dv = dv;
 		}
+		
+		@Override
+		public String toString() {
+			return  getNumero() + getDv();
+		}
 	}
 
 	public CC.Agencia getAgencia() {
@@ -64,5 +73,10 @@ public class CC{
 
 	public void setConta(CC.Conta conta) {
 		this.conta = conta;
+	}
+	
+	@Override
+	public String toString() {
+		return agencia.toString().concat(conta.toString());
 	}
 }

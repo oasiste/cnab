@@ -1,5 +1,6 @@
 package br.com.febraban.cnab;
 
+import br.com.febraban.cnab.dto.Controle;
 import br.com.febraban.cnab.dto.HeaderLote;
 import br.com.febraban.cnab.dto.SegmentoP;
 import br.com.febraban.cnab.dto.SegmentoQ;
@@ -35,7 +36,17 @@ public class CnabServiceImp implements CnabService{
 		sbheaderLote.append(headerLote.getDataCredito());
 		sbheaderLote.append(headerLote.getCNAB(33));
 		
+		StringBuilder sbSegmentoP = new StringBuilder();
+		
 		return null;
+	}
+	
+	private static String append(Controle controle){
+		StringBuilder sbheaderLote = new StringBuilder();
+		sbheaderLote.append(controle.getBanco());
+		sbheaderLote.append(controle.getLote());
+		sbheaderLote.append(controle.getRegistro());
+		return sbheaderLote.toString();
 	}
 
 }

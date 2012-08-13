@@ -28,4 +28,9 @@ public class Controle{
 	public void setRegistro(Integer registro) {
 		this.registro = registro;
 	}
+	
+	@Override
+	public String toString() {
+		return getBanco().concat(getLote()).concat(getRegistro());
+	}
 }
