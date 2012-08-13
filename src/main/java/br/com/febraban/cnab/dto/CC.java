@@ -1,22 +1,28 @@
 package br.com.febraban.cnab.dto;
 
+import br.com.febraban.cnab.Util;
 
-class CC{
+
+public class CC{
 	
 	private CC.Agencia agencia;
 	private CC.Conta conta;
 	
+	
+	CC() {}
+	
 	public class Agencia{
 		private Integer codigo;
 		private String dv;
-		public Integer getCodigo() {
-			return codigo;
+		
+		public String getCodigo() {
+			return  Util.formataCampo(codigo, 5) ;
 		}
 		public void setCodigo(Integer codigo) {
 			this.codigo = codigo;
 		}
 		public String getDv() {
-			return dv;
+			return Util.formataCampo(dv, 1) ;
 		}
 		public void setDv(String dv) {
 			this.dv = dv;
@@ -26,15 +32,19 @@ class CC{
 	public class Conta{
 		private Integer numero;
 		private String dv;
-		public Integer getNumero() {
-			return numero;
+		
+		public String getNumero() {
+			return Util.formataCampo(numero, 12) ;
 		}
+		
 		public void setNumero(Integer numero) {
 			this.numero = numero;
 		}
+		
 		public String getDv() {
-			return dv;
+			return Util.formataCampo(dv, 1) ;
 		}
+		
 		public void setDv(String dv) {
 			this.dv = dv;
 		}
