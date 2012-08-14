@@ -55,7 +55,7 @@ public class CC{
 		
 		@Override
 		public String toString() {
-			return  getNumero() + getDv();
+			return  getNumero().concat(getDv());
 		}
 	}
 

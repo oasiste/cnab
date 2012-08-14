@@ -87,9 +87,11 @@ public class SegmentoP {
 	}
 	
 	public class Desc1{
+		
 		private Integer codDesc1;
 		private Integer dataDesc1;
 		private Double desconto1;
+		
 		public Integer getCodDesc1() {
 			return codDesc1;
 		}
@@ -107,6 +109,14 @@ public class SegmentoP {
 		}
 		public void setDesconto1(Double desconto1) {
 			this.desconto1 = desconto1;
+		}
+		@Override
+		public String toString() {
+			StringBuilder sb  = new StringBuilder();
+			sb.append(getCodDesc1());
+			sb.append(getDataDesc1());
+			sb.append(getDesconto1());
+			return sb.toString();
 		}
 	}
 	
