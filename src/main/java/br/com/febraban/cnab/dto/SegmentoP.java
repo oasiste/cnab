@@ -1,5 +1,12 @@
 package br.com.febraban.cnab.dto;
 
+import br.com.febraban.cnab.Util;
+
+/**
+ * 
+ * @author otavio
+ *
+ */
 public class SegmentoP {
 	
 	private Controle controle;
@@ -32,10 +39,11 @@ public class SegmentoP {
 	private Integer numeroContrato;
 	private String usoLivreBancoEmpresa;
 	
-	public class Servico{
+	public static class Servico{
 		private Integer numeroRegistro;
 		private String segmento;
 		private Integer codMovimentoRemessa;
+		
 		public Integer getNumeroRegistro() {
 			return numeroRegistro;
 		}
@@ -54,9 +62,18 @@ public class SegmentoP {
 		public void setCodMovimentoRemessa(Integer codMovimentoRemessa) {
 			this.codMovimentoRemessa = codMovimentoRemessa;
 		}
+		@Override
+		public String toString() {
+			StringBuilder sb = new StringBuilder();
+			sb.append(Util.formataCampo(getNumeroRegistro()     , 5));
+			sb.append(Util.formataCampo(getSegmento()           , 1));
+			sb.append(Util.formataCampo(Util.CNAB		        , 1));
+			sb.append(Util.formataCampo(getCodMovimentoRemessa(), 5));
+			return super.toString();
+		}
 	}
 	
-	public class Juros{
+	public static class Juros{
 		
 		private Integer codJurosMora;
 		private Integer dataJurosMora;
@@ -84,9 +101,19 @@ public class SegmentoP {
 		public void setJurosMora(Double jurosMora) {
 			this.jurosMora = jurosMora;
 		}
+		
+		@Override
+		public String toString() {
+			StringBuilder sb = new StringBuilder();
+			sb.append(Util.formataCampo(getCodJurosMora() , 1));
+			sb.append(Util.formataCampo(getDataJurosMora(), 8));
+			sb.append(Util.formataCampo(getJurosMora(), 13, 2));
+			sb.append(getCodJurosMora());
+			return super.toString();
+		}
 	}
 	
-	public class Desc1{
+	public static class Desc1{
 		
 		private Integer codDesc1;
 		private Integer dataDesc1;
@@ -121,7 +148,7 @@ public class SegmentoP {
 	}
 	
 	
-	public class CaracteristicaCobranca{
+	public static class CaracteristicaCobranca{
 		
 		private Integer carteira;
 		private Integer cadastramento;
@@ -158,6 +185,16 @@ public class SegmentoP {
 		public void setDistribBloqueto(String distribBloqueto) {
 			this.distribBloqueto = distribBloqueto;
 		}	
+		@Override
+		public String toString() {
+			StringBuilder sb = new StringBuilder();
+			sb.append(Util.formataCampo(getCarteira()       , 1));
+			sb.append(Util.formataCampo(getCadastramento()  , 1));
+			sb.append(Util.formataCampo(getDocumento()		, 1));
+			sb.append(Util.formataCampo(getEmissaoBloqueto(), 1));
+			sb.append(Util.formataCampo(getDistribBloqueto(), 1));
+			return sb.toString();
+		}
 	}
 
 	public Controle getControle() {
@@ -359,5 +396,36 @@ public class SegmentoP {
 
 	public void setUsoLivreBancoEmpresa(String usoLivreBancoEmpresa) {
 		this.usoLivreBancoEmpresa = usoLivreBancoEmpresa;
+	}
+	@Override
+	public String toString() {
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append(controle.toString());
+		sb.append(servico.toString());
+		sb.append(cc.toString());
+		sb.append(Util.formataCampo(getNossoNumero(), 20));
+		sb.append(caracteristicaCobranca.toString());
+		sb.append(Util.formataCampo(getNumeroDocumentoCobranca(), 15));
+		sb.append(Util.formataCampo(getDataVencimentoTitulo()   ,  8));
+		sb.append(Util.formataCampo(getValorNominalTitulo()    ,13,2));
+		sb.append(Util.formataCampo(getAgenciaCobradora()        , 1));
+		sb.append(Util.formataCampo(getEspecieTitulo()          ,  2));
+		sb.append(Util.formataCampo(getAceite()                 ,  1));
+		sb.append(Util.formataCampo(getDataEmissaoTitulo()      ,  8));
+		sb.append(juros.toString());
+		sb.append(desc1.toString());
+		sb.append(Util.formataCampo(getVlrIOF()                , 13,2));
+		sb.append(Util.formataCampo(getVlrAbatimento()         , 13,2));
+		sb.append(Util.formataCampo(getUsoEmpresaCedente()       , 25));
+		sb.append(Util.formataCampo(getCodigoProtesto()          ,  1));
+		sb.append(Util.formataCampo(getPrazaProtesto()  	     ,  2));
+		sb.append(Util.formataCampo(getCodigoBaixaDevolucao()    ,  1));
+		sb.append(Util.formataCampo(getPrazoBaixaDevolucao()     ,  3));
+		sb.append(Util.formataCampo(getCodigoMoeda()       		 ,  2));
+		sb.append(Util.formataCampo(getNumeroContrato()          , 10));
+		sb.append(Util.formataCampo(getUsoLivreBancoEmpresa()    , 240));
+		
+		return super.toString();
 	}
 }

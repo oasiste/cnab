@@ -60,29 +60,6 @@ public class SegmentoQ {
 			this.cep = cep;
 		}
 	}
-	public class Servico{
-		private Integer numeroRegistro;
-		private String segmento;
-		private Integer codMovimentoRemessa;
-		public Integer getNumeroRegistro() {
-			return numeroRegistro;
-		}
-		public void setNumeroRegistro(Integer numeroRegistro) {
-			this.numeroRegistro = numeroRegistro;
-		}
-		public String getSegmento() {
-			return segmento;
-		}
-		public void setSegmento(String segmento) {
-			this.segmento = segmento;
-		}
-		public Integer getCodMovimentoRemessa() {
-			return codMovimentoRemessa;
-		}
-		public void setCodMovimentoRemessa(Integer codMovimentoRemessa) {
-			this.codMovimentoRemessa = codMovimentoRemessa;
-		}
-	}
 	public Controle getControle() {
 		return controle;
 	}
