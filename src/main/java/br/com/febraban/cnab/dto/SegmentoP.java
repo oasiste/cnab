@@ -25,7 +25,7 @@ public class SegmentoP {
 	
 	private String usoEmpresaCedente;
 	private Integer codigoProtesto;
-	private Integer prazaProtesto;
+	private Integer prazoProtesto;
 	private Integer codigoBaixaDevolucao;
 	private Integer prazoBaixaDevolucao;
 	private Integer codigoMoeda;
@@ -314,11 +314,11 @@ public class SegmentoP {
 	}
 
 	public Integer getPrazaProtesto() {
-		return prazaProtesto;
+		return prazoProtesto;
 	}
 
 	public void setPrazaProtesto(Integer prazaProtesto) {
-		this.prazaProtesto = prazaProtesto;
+		this.prazoProtesto = prazaProtesto;
 	}
 
 	public Integer getCodigoBaixaDevolucao() {
