@@ -1,12 +1,19 @@
 package br.com.febraban.cnab;
 
+import java.text.DateFormat;
 import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Util {
 	
 	public static String CNAB = "";
+	
+	private static DateFormat dateFormat;
+	
+	static{
+		dateFormat = new SimpleDateFormat("ddMMyyyy");
+	}
 
 
 	public static String formataCampo(int campo,int numDigito){
@@ -22,6 +29,14 @@ public class Util {
 			while(campo.length()<numDigito)
 				campo =  campo.concat(" ");
 		return campo;
+	}
+	
+	public static String formataCampo(Date date){
+		
+		if(date==null)
+			return null;
+		
+		return dateFormat.format(date);
 	}
 
 	public static String formataCampo(Double campo,int numDigito,int numDec){

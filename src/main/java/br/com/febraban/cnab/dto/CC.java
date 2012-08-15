@@ -1,6 +1,6 @@
 package br.com.febraban.cnab.dto;
 
-import br.com.febraban.cnab.Util;
+import static br.com.febraban.cnab.Util.formataCampo;
 
 
 public class CC{
@@ -10,18 +10,18 @@ public class CC{
 	
 	CC() {}
 	
-	public class Agencia{
+	public static class Agencia{
 		private Integer codigo;
 		private String dv;
 		
-		public String getCodigo() {
-			return  Util.formataCampo(codigo, 5) ;
+		public Integer getCodigo() {
+			return  codigo ;
 		}
 		public void setCodigo(Integer codigo) {
 			this.codigo = codigo;
 		}
 		public String getDv() {
-			return Util.formataCampo(dv, 1) ;
+			return dv ;
 		}
 		public void setDv(String dv) {
 			this.dv = dv;
@@ -29,16 +29,20 @@ public class CC{
 		
 		@Override
 		public String toString() {
-			return getCodigo().concat(getDv());
+			StringBuilder sb = new StringBuilder();
+			sb.append(formataCampo(getCodigo(), 5));
+			sb.append(formataCampo(getDv()    , 1));
+			return sb.toString();
 		}
 	}
 	
-	public class Conta{
+	public static class Conta{
+		
 		private Integer numero;
 		private String dv;
 		
-		public String getNumero() {
-			return Util.formataCampo(numero, 12) ;
+		public Integer getNumero() {
+			return numero;
 		}
 		
 		public void setNumero(Integer numero) {
@@ -46,7 +50,7 @@ public class CC{
 		}
 		
 		public String getDv() {
-			return Util.formataCampo(dv, 1) ;
+			return dv;
 		}
 		
 		public void setDv(String dv) {
@@ -55,7 +59,10 @@ public class CC{
 		
 		@Override
 		public String toString() {
-			return  getNumero().concat(getDv());
+			StringBuilder sb = new StringBuilder();
+			sb.append(formataCampo(getNumero(), 12));
+			sb.append(formataCampo(getDv()    , 1));
+			return  sb.toString();
 		}
 	}
 

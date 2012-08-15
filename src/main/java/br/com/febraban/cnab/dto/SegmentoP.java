@@ -1,5 +1,7 @@
 package br.com.febraban.cnab.dto;
 
+import java.util.Date;
+
 import br.com.febraban.cnab.Util;
 
 /**
@@ -15,17 +17,17 @@ public class SegmentoP {
 	private String nossoNumero;
 	private CaracteristicaCobranca caracteristicaCobranca;
 	private String numeroDocumentoCobranca;
-	private Integer dataVencimentoTitulo;
+	private Date dataVencimentoTitulo;
 	private Double valorNominalTitulo;
 	
 	private Integer agenciaCobradora;
 	private String digitoVerificadorAgencia;
 	private Integer especieTitulo;
 	private String aceite;
-	private Integer dataEmissaoTitulo;
+	private Date dataEmissaoTitulo;
 	
 	private Juros juros;
-	private Desc1 desc1;
+	private Desc desc1;
 	
 	private Double vlrIOF;
 	private Double vlrAbatimento;
@@ -76,7 +78,7 @@ public class SegmentoP {
 	public static class Juros{
 		
 		private Integer codJurosMora;
-		private Integer dataJurosMora;
+		private Date dataJurosMora;
 		private Double jurosMora;
 		
 		public Integer getCodJurosMora() {
@@ -85,10 +87,10 @@ public class SegmentoP {
 		public void setCodJurosMora(Integer codJurosMora) {
 			this.codJurosMora = codJurosMora;
 		}
-		public Integer getDataJurosMora() {
+		public Date getDataJurosMora() {
 			return dataJurosMora;
 		}
-		public void setDataJurosMora(Integer dataJurosMora) {
+		public void setDataJurosMora(Date dataJurosMora) {
 			this.dataJurosMora = dataJurosMora;
 		}
 		public Double getJurosMora() {
@@ -106,47 +108,12 @@ public class SegmentoP {
 		public String toString() {
 			StringBuilder sb = new StringBuilder();
 			sb.append(Util.formataCampo(getCodJurosMora() , 1));
-			sb.append(Util.formataCampo(getDataJurosMora(), 8));
+			sb.append(Util.formataCampo(getDataJurosMora()   ));
 			sb.append(Util.formataCampo(getJurosMora(), 13, 2));
 			sb.append(getCodJurosMora());
 			return super.toString();
 		}
 	}
-	
-	public static class Desc1{
-		
-		private Integer codDesc1;
-		private Integer dataDesc1;
-		private Double desconto1;
-		
-		public Integer getCodDesc1() {
-			return codDesc1;
-		}
-		public void setCodDesc1(Integer codDesc1) {
-			this.codDesc1 = codDesc1;
-		}
-		public Integer getDataDesc1() {
-			return dataDesc1;
-		}
-		public void setDataDesc1(Integer dataDesc1) {
-			this.dataDesc1 = dataDesc1;
-		}
-		public Double getDesconto1() {
-			return desconto1;
-		}
-		public void setDesconto1(Double desconto1) {
-			this.desconto1 = desconto1;
-		}
-		@Override
-		public String toString() {
-			StringBuilder sb  = new StringBuilder();
-			sb.append(getCodDesc1());
-			sb.append(getDataDesc1());
-			sb.append(getDesconto1());
-			return sb.toString();
-		}
-	}
-	
 	
 	public static class CaracteristicaCobranca{
 		
@@ -246,11 +213,11 @@ public class SegmentoP {
 		this.numeroDocumentoCobranca = numeroDocumentoCobranca;
 	}
 
-	public Integer getDataVencimentoTitulo() {
+	public Date getDataVencimentoTitulo() {
 		return dataVencimentoTitulo;
 	}
 
-	public void setDataVencimentoTitulo(Integer dataVencimentoTitulo) {
+	public void setDataVencimentoTitulo(Date dataVencimentoTitulo) {
 		this.dataVencimentoTitulo = dataVencimentoTitulo;
 	}
 
@@ -294,11 +261,11 @@ public class SegmentoP {
 		this.aceite = aceite;
 	}
 
-	public Integer getDataEmissaoTitulo() {
+	public Date getDataEmissaoTitulo() {
 		return dataEmissaoTitulo;
 	}
 
-	public void setDataEmissaoTitulo(Integer dataEmissaoTitulo) {
+	public void setDataEmissaoTitulo(Date dataEmissaoTitulo) {
 		this.dataEmissaoTitulo = dataEmissaoTitulo;
 	}
 
@@ -308,14 +275,6 @@ public class SegmentoP {
 
 	public void setJuros(Juros juros) {
 		this.juros = juros;
-	}
-
-	public Desc1 getDesc1() {
-		return desc1;
-	}
-
-	public void setDesc1(Desc1 desc1) {
-		this.desc1 = desc1;
 	}
 
 	public Double getVlrIOF() {
@@ -407,12 +366,12 @@ public class SegmentoP {
 		sb.append(Util.formataCampo(getNossoNumero(), 20));
 		sb.append(caracteristicaCobranca.toString());
 		sb.append(Util.formataCampo(getNumeroDocumentoCobranca(), 15));
-		sb.append(Util.formataCampo(getDataVencimentoTitulo()   ,  8));
+		sb.append(Util.formataCampo(getDataVencimentoTitulo()       ));
 		sb.append(Util.formataCampo(getValorNominalTitulo()    ,13,2));
 		sb.append(Util.formataCampo(getAgenciaCobradora()        , 1));
 		sb.append(Util.formataCampo(getEspecieTitulo()          ,  2));
 		sb.append(Util.formataCampo(getAceite()                 ,  1));
-		sb.append(Util.formataCampo(getDataEmissaoTitulo()      ,  8));
+		sb.append(Util.formataCampo(getDataEmissaoTitulo()  		));
 		sb.append(juros.toString());
 		sb.append(desc1.toString());
 		sb.append(Util.formataCampo(getVlrIOF()                , 13,2));
