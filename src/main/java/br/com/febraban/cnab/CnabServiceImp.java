@@ -1,9 +1,5 @@
 package br.com.febraban.cnab;
 
-import br.com.febraban.cnab.dto.Controle;
-import br.com.febraban.cnab.dto.HeaderLote;
-import br.com.febraban.cnab.dto.SegmentoP;
-import br.com.febraban.cnab.dto.SegmentoQ;
 
 public class CnabServiceImp implements CnabService{
 

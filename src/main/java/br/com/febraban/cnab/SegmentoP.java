@@ -1,4 +1,4 @@
-package br.com.febraban.cnab.dto;
+package br.com.febraban.cnab;
 
 import java.util.Date;
 import br.com.febraban.cnab.Util;

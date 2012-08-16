@@ -1,4 +1,4 @@
-package br.com.febraban.cnab.dto;
+package br.com.febraban.cnab;
 
 import static br.com.febraban.cnab.Util.CNAB;
 import static br.com.febraban.cnab.Util.formataCampo;

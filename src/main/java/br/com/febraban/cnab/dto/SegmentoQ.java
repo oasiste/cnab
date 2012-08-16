@@ -4,8 +4,9 @@ public class SegmentoQ {
 
 	private Controle controle;
 	private Servico servico;
+	private DadosSacado dadosSacado;
 
-	public class DadosSacado{
+	public static class DadosSacado{
 		
 		private Inscricao inscricao;
 		private String nome;
@@ -13,7 +14,7 @@ public class SegmentoQ {
 		private String bairro;
 		private Integer cep;
 		
-		public class Inscricao{
+		public static class Inscricao{
 			private Integer tipo;
 			private Integer numero;
 			public Integer getTipo() {
@@ -71,5 +72,11 @@ public class SegmentoQ {
 	}
 	public void setServico(Servico servico) {
 		this.servico = servico;
+	}
+	public DadosSacado getDadosSacado() {
+		return dadosSacado;
+	}
+	public void setDadosSacado(DadosSacado dadosSacado) {
+		this.dadosSacado = dadosSacado;
 	}
 }
